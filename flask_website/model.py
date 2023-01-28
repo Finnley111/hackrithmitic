@@ -16,12 +16,12 @@ from sklearn.linear_model import LinearRegression
 regressor = LinearRegression()
 regressor.fit(X_train, y_train)
 
-def get_result(email_data, regressor):
+def get_result(email_data, regressor = regressor):
     email_data = np.array([email_data])
     # predicting the test set results
     y_pred = regressor.predict(email_data)
     np.set_printoptions(precision=2)
-
+    
     if y_pred >= 0.5:
         return 1
     else:
@@ -50,4 +50,4 @@ def get_result(email_data, regressor):
 # GeoComply'''
 
 # test = new_email.email_data(email)
-# print(get_result(test, regressor))
+# print(get_result(test))
